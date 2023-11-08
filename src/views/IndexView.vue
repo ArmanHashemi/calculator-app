@@ -52,9 +52,9 @@ const onButtonClick = (button: string) => {
   }
 }
 // Function to animate the button corresponding to the pressed key
-const animateButton = (key) => {
+const animateButton = (key: string) => {
 // Map the key to the corresponding button symbol if needed
-  const keyToSymbolMap = {
+  const keyToSymbolMap: { [key: string]: string } = {
     '*': '×',
     '/': '÷'
   };
@@ -70,7 +70,7 @@ const animateButton = (key) => {
     }, 200); // Adjust the duration to match your CSS animation
   }
 };
-const appendSymbol = (symbol) => {
+const appendSymbol = (symbol: string) => {
   display.value += symbol;
   animateButton(symbol);
 };
@@ -87,11 +87,13 @@ const clearAll = () => {
 };
 
 // Function to handle keydown events
-const handleKeydown = (event) => {
+const handleKeydown = (event: KeyboardEvent) => {
   const { key } = event;
 
-// Check if the key is a numeric value
-  if (!isNaN(key) && !isNaN(parseFloat(key))) {
+  const keyAsNumber = parseFloat(key);
+
+  // Check if the parsed number is a number and not NaN
+  if (!isNaN(keyAsNumber)) {
     appendSymbol(key);
   } else {
     // Use switch-case for non-numeric keys
