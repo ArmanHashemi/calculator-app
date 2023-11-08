@@ -13,3 +13,33 @@
   --color-secondary: #731f3c;
   --color-accent: #dfa180;
 }
+
+.calculator-display {
+  min-height: 3rem; /* Set minimum height for the display */
+  caret-color: blue; /* Color of the blinking cursor */
+  white-space: nowrap; /* Prevents the content from wrapping */
+  overflow: hidden; /* Keeps the content in a single line */
+}
+
+/* The following custom CSS ensures that the blinking cursor is visible even when the display is not in focus */
+.calculator-display:focus {
+  outline: none; /* Removes the default outline */
+  border-color: #4299e1; /* Tailwind's blue-500 color for focus border */
+}
+
+/* Add this to your CSS to handle cursor blinking behavior */
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+.calculator-display::after {
+  content: '|';
+  animation: blink 1s steps(5, start) infinite;
+  display: inline-block;
+  margin-left: 0.1rem;
+}
+
+
+
+
+
