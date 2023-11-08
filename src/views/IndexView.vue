@@ -4,7 +4,7 @@
       <user-manual />
     </div>
     <div class="w-full lg:w-1/2 bg-gray-800 p-10 rounded-xl max-w-2xl">
-      <div class="calculator-display p-5 text-right text-white text-2xl mb-4 bg-gray-700 rounded h-16">{{display}}</div>
+      <div class="calculator-font calculator-display p-5 text-right text-white text-3xl mb-4 bg-gray-700 rounded h-16">{{display}}</div>
       <div class="grid grid-cols-4 gap-4">
         <button
             v-for="button in buttons"

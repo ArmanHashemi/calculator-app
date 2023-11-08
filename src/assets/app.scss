@@ -2,6 +2,14 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@font-face {
+  font-family: "calculator";
+  src: url("fonts/calculator.ttf") format("truetype");
+}
+.calculator-font {
+  font-family: "calculator", Monospaced, sans-serif;
+}
+
 [color-scheme="light"] {
   --color-primary: #3f51b5;
   --color-secondary: #ff4081;
