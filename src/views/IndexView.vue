@@ -1,6 +1,5 @@
 <template>
-  <div class="">
-ddd
+  <div class="flex bg-red-500">
   </div>
 </template>
 
